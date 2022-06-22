@@ -1,0 +1,13 @@
+<div class="video-card">
+    <img class="video-thumbnail" [src]="video.thumbnailUrl">
+    <h3 class="video-title">{{video.title}}</h3>
+    <h4 class="video-youtuber">{{video.youtuber}}</h4>
+    <p class="video-infos">
+        {{video.getViewNumber()}}K vues • 
+        <span *ngIf="video.isLive; else isLive">y a {{video.getTimeSincePosted()}} min</span> 
+        <ng-template #isLive>
+            <span>🔴 En direct</span>
+        </ng-template>
+    </p>
+    <p class="video-category">{{video.category}}</p>
+</div>

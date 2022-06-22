@@ -1,0 +1,47 @@
+<nav class=" search-bar">
+    <div class="flex flex-spread flex-center">
+        <div class="flex">
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="flex flex-center logo">        
+                <img src="assets\Pictures\YoutubeLogo.png">
+                <h1>YouTube</h1>
+            </div>
+        </div>
+        <div>
+            <input type="text" placeholder="Rechercher..." [(ngModel)]="filter" (input)="submitFilter()">
+        </div>
+        <div>
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <app-button *ngFor="let category of categories"
+            (sendCategorySelected)="onReceiveCategory($event)"
+            [category]="category"
+            [backgroundColor]="buttonColor"
+        ></app-button>
+    </div>
+</nav>
