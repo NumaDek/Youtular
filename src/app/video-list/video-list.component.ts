@@ -15,6 +15,7 @@ export class VideoListComponent implements OnInit {
   public selectedCategory: string = "All";
   @Input()
   public searchValue: string = "";
+  public videoList:VideoCard[] = [];
 
   constructor() { }
 
@@ -22,10 +23,6 @@ export class VideoListComponent implements OnInit {
     this.contentGeneration();
   }
 
-
-  
-  public videoList:VideoCard[] = [];
-   
   public contentGeneration() { 
       for (let i = 0; i < 20; i++) {
         const thumbnailUrl = thumbnailUrls[Math.floor(Math.random() * 100000000 % 5)];
@@ -40,7 +37,6 @@ export class VideoListComponent implements OnInit {
   }
 
   public isVideoFromSelectedCategory(video: VideoCard): boolean {
-    
     return ((this.selectedCategory === 'All' || video.category == this.selectedCategory));
   }
 
@@ -49,4 +45,4 @@ export class VideoListComponent implements OnInit {
   }
 }
 
-// Merci pour l'aide de tatiana pour la nomenclature des variables. copyright.
+// Merci pour l'aide de tatiana pour la nommage des variables. copyright.
